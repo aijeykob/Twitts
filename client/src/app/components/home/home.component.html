@@ -1,0 +1,17 @@
+ <div class="container">
+
+
+  <div class="card mb-3" style="max-width: 540px;" *ngFor="let twit of tweet">
+      <div class="row no-gutters">
+        <div class="col-md-1">
+          <img src={{twit.authorImg}}  class="rounded-circle">
+        </div>
+        <div class="col-md-11">
+          <div class="card-body">
+            <h5 class="card-title"><strong>{{twit.authorName}}</strong></h5>
+            <p class="card-text">{{twit.tweetText}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>

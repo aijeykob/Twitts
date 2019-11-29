@@ -1,0 +1,51 @@
+{
+  "name": "jwt-integ",
+  "version": "1.0.0",
+  "description": "A prototype of integrating Node JS apps with JWT",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node --inspect-brk server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narenaryan/node-jwt-integ.git"
+  },
+  "keywords": [
+    "node",
+    "jwt",
+    "auth"
+  ],
+  "author": "Naren Arya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/narenaryan/node-jwt-integ/issues"
+  },
+  "homepage": "https://github.com/narenaryan/node-jwt-integ#readme",
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "dependencies": {
+    "argon2": "^0.25.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "express-session": "^1.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.1.0",
+    "mongoose": "^5.7.11",
+    "morgan": "^1.9.1",
+    "node-cron": "^2.0.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "twit": "^2.2.11"
+  }
+}

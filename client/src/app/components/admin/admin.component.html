@@ -1,0 +1,39 @@
+<div class="container">
+
+<div [ngSwitch]="success">
+  <span *ngSwitchCase="true">
+    <p>Click on Map to set marker</p>
+    <p>Pull the center to movie circle</p>
+    <div>
+      <input [(ngModel)]="la" (ngModelChange)="setCircle($event)" type="number" placeholder="latitude" />
+      <input [(ngModel)]="lo" type="number" placeholder="longitude" />
+      <input [(ngModel)]="ra" type="number" />
+      <input [(ngModel)]="searchText" type="text" placeholder="searchText" />
+      <input [(ngModel)]="timeCron" type="range" min="0" max="60" />{{timeCron}}minutes for update
+      <button (click)="clearFilds()">clear</button>
+      <button (click)="getTweets()">send</button>
+      <agm-map [latitude]='la' [longitude]='lo' (mapClick)="onChoseLocation($event)">
+        <agm-circle [latitude]='la' [longitude]='lo' [radius]='ra' [strokeColor]="strokeColor" [fillOpacity]="0.5"
+          [draggable]="true" [editable]="true" (radiusChange)="onRadiusChange($event)" (centerChange)="onCenterChange($event)"></agm-circle>
+      </agm-map>
+      <div class="card mb-3" style="max-width: 540px;" *ngFor="let twit of tweet">
+          <div class="row no-gutters">
+            <div class="col-md-1">
+              <img src={{twit.authorImg}}  class="rounded-circle">
+            </div>
+            <div class="col-md-11">
+              <div class="card-body">
+                <h5 class="card-title"><strong>{{twit.authorName}}</strong></h5>
+                <p class="card-text">{{twit.tweetText}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </span>
+  <span *ngSwitchDefault>
+    <div>please log in</div>
+  </span>
+
+</div>
+</div>
