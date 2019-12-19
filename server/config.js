@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
-  secret: 'worldisfullofdevelopers'
+  secret: process.env.secret
 };

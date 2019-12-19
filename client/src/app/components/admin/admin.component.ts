@@ -21,16 +21,15 @@ export class AdminComponent implements OnInit {
   searchText;
   ngOnInit() {
     this.checkToken();
-
   }
 
   checkToken(): void {
     this.userService.checkToken()
-        .subscribe(res => {
-          this.success = res.success
-        },
-          err => {throw err}
-        )
+        .subscribe(
+          {
+            next: res => {this.success = res.success},
+            error: err => {throw err}
+      })
   }
 
   onChoseLocation(event) {
@@ -49,8 +48,9 @@ export class AdminComponent implements OnInit {
   getTweets(): void {
     this.tweetService.getTwittsbyAdmin(this.la, this.lo, this.ra, this.searchText, this.timeCron)
       .subscribe(
-        newTweet => {
-          this.tweet = newTweet
+        {
+          next: res => {this.tweet = res},
+          error: err => {throw err}
         }
       )
   }

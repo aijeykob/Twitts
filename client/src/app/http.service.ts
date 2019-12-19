@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { environment } from '../environments/environment';
 @Injectable()
 export class HttpService {
 
-  url = 'http://localhost:3000/api/';
+  url = environment.api_host;
   constructor(private http: HttpClient) { }
   setHeader() {
     return new HttpHeaders({

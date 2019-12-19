@@ -24,13 +24,11 @@ export class GlobalErrorComponent  implements OnDestroy{
       console.log(message)
     });
   }
-
     ngOnInit() {
     }
     ngOnDestroy() {
       // unsubscribe to ensure no memory leaks
-      this.subscription.unsubscribe();
+      if (this.subscription)
+      	this.subscription.unsubscribe();
   }
-
-
 } 
